@@ -1,11 +1,12 @@
 <article class="post w-100 p-3">
   <div class="card">
     <div class="title card-body card-header">
-      <a href="{{post_url}}" target="_blank">{{title}}</a>
-      <span>({{format_url post_url}})</span>
+      {{title}}
+      <span></span>
     </div>
 
     <div class="meta card-body">
+      <p class="card-text"></p>
       <span class="badge bg-primary rounded-pill">{{vote_count}}
         {{format_plural "point" vote_count}}</span>
       by
