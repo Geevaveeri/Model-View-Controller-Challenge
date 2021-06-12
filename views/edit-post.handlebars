@@ -1,0 +1,40 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Post
+  </h2>
+  <form class="edit-post-form">
+    <div class="card">
+      <div class="title card-body card-header">
+      <input name="post-title" type="text" value="{{post.title}}" class="form-label w-50 p-3" />
+      <span>({{format_url post.post_url}})</span>
+    </div>
+    
+    <div class="mb-3 card-body">
+      {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
+      |
+      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
+    </div>
+    </div>
+    <div class="mb-3 margin">
+    <button type="submit " class="btn btn-primary">Save post</button>
+    <button type="button" class="delete-post-btn btn btn-primary">Delete post</button>
+    </div>
+  </form>
+</article>
+
+<form class="comment-form">
+  <div class="mb-3">
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div class="mb-3">
+    <button type="submit" class="btn btn-primary margin">add comment</button>
+  </div>
+</form>
+
+{{> comments post.comments}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
