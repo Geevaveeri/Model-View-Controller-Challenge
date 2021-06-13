@@ -18,6 +18,7 @@
 <section>
   <h2>Your Posts</h2>
   <ol class="post-list list-group list-group-numbered">
+    {{reverse_array posts}}
     {{#each posts as |post|}}
     <li class="list-group-item d-flex align-items-start">
       {{> post-info post}}
